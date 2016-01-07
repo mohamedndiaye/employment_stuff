@@ -1,9 +1,16 @@
 ################################################################################
-# Using Indeed's API to Get Info on Floor Technician Jobs
+# Using Indeed's API to Get Job Posting Data
 ################################################################################
 
+# This file starts by searching Indeed for job listings, then converting the 
+# search results to a more useful form, and visualizing the data using word
+# clouds
+
 # See https://ads.indeed.com/jobroll/xmlfeed for editing feed to customize
-# search. `XML` package to parse the xml file that the Indeed API returns
+# search. Search returns the most relevant search results (up to 25 listings), 
+# given search terms and restrictions.
+
+# `XML` package to parse the xml file that the Indeed API returns. 
 
 # install.packages("XML")
 
@@ -31,7 +38,7 @@ data$url <- as.character(data$url) # Need this for converting to a list
 urls <- as.list(data$url) # Retaining the URLs as a list so we can lapply them
 
 ################################################################################
-# Starting with first URL by itself, just as a trail case
+# Starting with first URL by itself, as a trail case
 ################################################################################
 
 # You can update which particular search result you want to examine with the 
@@ -111,7 +118,7 @@ posting_matrix <- sort(rowSums(as.matrix(posting_TDM)), decreasing = T)
 
 set.seed(4363)
 
-wordcloud(names(posting_matrix), posting_matrix, min.freq=22, title = "Hello")
+wordcloud(names(posting_matrix), posting_matrix, min.freq=22)
 
 
 
