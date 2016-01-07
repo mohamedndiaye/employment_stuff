@@ -118,7 +118,7 @@ posting_matrix <- sort(rowSums(as.matrix(posting_TDM)), decreasing = T)
 
 set.seed(4363)
 
-wordcloud(names(posting_matrix), posting_matrix, min.freq=25)
+wordcloud(names(posting_matrix), posting_matrix, min.freq=25) 
 
 
 
