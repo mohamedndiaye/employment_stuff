@@ -23,7 +23,7 @@ library("wordcloud") # Word cloud visualization
 
 # Searching for postings with "floor" and "technician"
 
-raw_data <- xmlParse("http://api.indeed.com/ads/apisearch?publisher=9724091492889092&q=stata&l=20001&sort=&radius=10&st=&jt=&start=1&limit=50&fromage=30&filter=&latlong=1&co=us&chnl=&userip=1.2.3.4&useragent=Mozilla/%2F4.0%28Firefox%29&v=2")
+raw_data <- xmlParse("http://api.indeed.com/ads/apisearch?publisher=9724091492889092&q=manual+labor&l=20001&sort=&radius=10&st=&jt=&start=1&limit=50&fromage=30&filter=&latlong=1&co=us&chnl=&userip=1.2.3.4&useragent=Mozilla/%2F4.0%28Firefox%29&v=2")
 
 class(raw_data) # [1] "XMLInternalDocument" "XMLAbstractDocument"
 
@@ -118,7 +118,7 @@ posting_matrix <- sort(rowSums(as.matrix(posting_TDM)), decreasing = T)
 
 set.seed(4363)
 
-wordcloud(names(posting_matrix), posting_matrix, min.freq=22)
+wordcloud(names(posting_matrix), posting_matrix, min.freq=)
 
 
 
