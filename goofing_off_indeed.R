@@ -94,6 +94,9 @@ cleaning <- function(x) {
 
 posting_data <- lapply(urls, function(x) PlainTextDocument(cleaning(x)))
 
+# cleaning <- dget("cleaning.R") `cleaning.R` has been saved as a separate file, 
+# so we can also call it 
+
 ################################################################################
 # Creating Corpus + Using Term Document Matrix (TDM) for Text Analysis
 ################################################################################
